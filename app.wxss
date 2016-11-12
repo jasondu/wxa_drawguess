@@ -211,7 +211,7 @@ checkbox, radio{
 }
 
 .section{
-    margin-bottom: 80rpx;
+    /*margin-bottom: 80rpx;*/
 }
 .section_gap{
     padding: 0 30rpx;
