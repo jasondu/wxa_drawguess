@@ -1,0 +1,29 @@
+<view class="section">
+<view class="flex-wrp">
+    <view class="draw_label">
+        <canvas 
+        canvas-id="firstCanvas"
+        disable-scroll="true"
+        bindtouchstart="touchStart"
+        bindtouchmove="touchMove"
+        bindtouchend="touchEnd"
+        >
+        </canvas>
+    </view>
+    <scroll-view class="scroll_user" scroll-x="true">
+            <view></view>
+            <view></view>
+    </scroll-view>
+    <scroll-view class="scroll_chat" scroll-y="true">
+        <text>昵称：内容内容内容内容内容内容内容内容内容</text>
+        <text>昵称：内容内容内容内容内容内容内容内容内容</text>
+        <text>昵称：内容内容内容内容内容内容内容内容内容</text>
+        <text>昵称：内容内容内容内容内容内容内容内容内容</text>
+        <text>昵称：内容内容内容内容内容内容内容内容内容</text>
+        <text>昵称：内容内容内容内容内容内容内容内容内容</text>
+    </scroll-view>
+    <view class="foot_label">
+        <input placeholder=""/>
+    </view>
+</view>
+</view>
