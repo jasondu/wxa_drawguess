@@ -1,0 +1,31 @@
+<view class="section">
+<view class="flex-wrp">
+    <view class="draw_label">
+        <canvas 
+        canvas-id="firstCanvas"
+        disable-scroll="true"
+        bindtouchstart="touchStart"
+        bindtouchmove="touchMove"
+        bindtouchend="touchEnd"
+        >
+        </canvas>
+    </view>
+    <scroll-view class="scroll_user" scroll-x="true">
+            <view></view>
+            <view></view>
+    </scroll-view>
+    <scroll-view class="scroll_chat" scroll-y="true">
+        <view wx:for="{{messages}}" wx:for-item="message" wx:key="id" id="{{message.id}}" class="message {{message.type}}">
+            <view wx:if="{{message.type == 'speak'}}" class="user-message {{message.isMe ? 'me' : 'other'}}">
+                <text>{{message.user.nickName}}:{{message.content}}</text>
+            </view>
+            <view wx:if="{{message.type == 'system'}}" class="system-message">
+                {{message.content}}
+            </view>
+        </view>
+    </scroll-view>
+    <view class="foot_label">
+        <input placeholder=""/>
+    </view>
+</view>
+</view>
