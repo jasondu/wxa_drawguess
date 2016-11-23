@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/chat/chat",
-        "pages/drawguess/index"
+        "pages/drawguess/index",
+        "pages/upload/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

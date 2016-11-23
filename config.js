@@ -19,6 +19,8 @@ var config = {
 
         // 测试的信道服务地址
         tunnelUrl: `https://${host}/tunnel`,
+
+        uploadUrl: `https://${host}/cos`,
     }
 };
 

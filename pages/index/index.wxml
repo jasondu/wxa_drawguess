@@ -4,6 +4,7 @@
         <view class="line-control">
             <view bindtap="openChat" class="item"><view class="item-inner">三木聊天室</view></view>
             <view bindtap="openDrawguess" class="item"><view class="item-inner">你猜我画</view></view>
+            <view bindtap="openUpload" class="item"><view class="item-inner">文件上传</view></view>
         </view>
     </view>
     <view class="line">

@@ -211,5 +211,8 @@ Page({
     openDrawguess() {
         this.closeTunnel();
         wx.navigateTo({ url: '../drawguess/index' });
+    },
+    openUpload() {
+        wx.navigateTo({ url: '../upload/index' });
     }
 });
