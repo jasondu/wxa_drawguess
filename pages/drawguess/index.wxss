@@ -1,6 +1,9 @@
 .section {
     height: 100%;
 }
+.dsn {
+    display: none;
+}
 .flex-wrp {
     height: 100%;
     flex-direction:column;
@@ -8,6 +11,12 @@
 }
 .text-left {
     text-align: left;
+}
+.wait_label {
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    background-color: #f8777b;
 }
 .draw_label {
     width: 100%; 

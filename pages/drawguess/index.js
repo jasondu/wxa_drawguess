@@ -34,6 +34,7 @@ function createUserMessage(content, user, isMe) {
 }
 Page({
   data: {
+      waiting: true,    // 是否是等待人员加入状态
      messages: []
   },
   canvasIdErrorCallback: function (e) {
@@ -41,12 +42,11 @@ Page({
   },
   onReady: function (e) {
     wx.setNavigationBarTitle({ title: '你猜我画' });
-    if (!this.pageReady) {
-        this.pageReady = true;
-        this.enter();
-    }
+    // if (!this.pageReady) {
+    //     this.pageReady = true;
+    //     this.enter();
+    // }
       this.context = wx.createContext()
-
       this.context.setStrokeStyle("#000000")
       this.context.setLineWidth(2)
       this.context.setLineCap('round') // 让线条圆润
