@@ -2,7 +2,17 @@
 <view class="flex-wrp">
     <!--等待进入房间界面-->
     <view class="wait_label" wx:if="{{waiting}}">
-
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+                <image src="src" mode="aspectFill" class="header_img"></image>
+                <text>昵称</text>
+                <view class="status_txt">已准备</view>
+            </view>
+            <view class="weui-flex__item"><image src="src" mode="aspectFill" class="header_img"></image><text>昵称</text></view>
+            <view class="weui-flex__item"><image src="src" mode="aspectFill" class="header_img"></image><text>昵称</text></view>
+        </view>
+    </view>
     </view>
     <!--画板界面-->
     <view class="draw_label" wx:if="{{!waiting}}">
@@ -17,8 +27,9 @@
     </view>
     <!--玩家列表-->
     <scroll-view class="scroll_user" scroll-x="true">
-            <view></view>
-            <view></view>
+            <image src="src" mode="aspectFill"></image>
+            <image src="src" mode="aspectFill"></image>
+            <image src="src" mode="aspectFill"></image>
     </scroll-view>
     <!--聊天界面-->
     <scroll-view class="scroll_chat" scroll-y="true">

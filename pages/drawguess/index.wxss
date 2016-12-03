@@ -17,6 +17,37 @@
     width: 100%;
     display: flex;
     background-color: #f8777b;
+    padding-top: 1rem; 
+}
+.wait_label .page__bd {
+    width: 100%;
+    text-align: center;
+}
+.wait_label text {
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+}
+.wait_label .weui-flex__item {
+    position: relative;
+}
+.wait_label .status_txt {
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.2rem;
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    background-color: #ffad00;
+    color: #fff;
+}
+.header_img {
+    display: inline-block;
+    background-color: #fff;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
 }
 .draw_label {
     width: 100%; 
@@ -39,7 +70,7 @@
     box-sizing: border-box;
     white-space: nowrap;
 }
-.scroll_user view {
+.scroll_user image {
     display: inline-block;
     width: 2rem;
     height: 2rem;
