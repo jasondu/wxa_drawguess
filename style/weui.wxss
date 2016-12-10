@@ -7,7 +7,6 @@ icon {
 }
 .weui-cells {
   position: relative;
-  margin-top: 1.17647059em;
   background-color: #FFFFFF;
   line-height: 1.41176471;
   font-size: 17px;
@@ -69,7 +68,6 @@ icon {
   height: 1px;
   border-top: 1rpx solid #D9D9D9;
   color: #D9D9D9;
-  left: 15px;
 }
 .weui-cell:first-child:before {
   display: none;

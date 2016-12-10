@@ -34,18 +34,20 @@ function createUserMessage(content, user, isMe) {
 }
 Page({
   data: {
-      waiting: true,    // 是否是等待人员加入状态
-     messages: []
+    setShow: false,
+    waiting: true,    // 是否是等待人员加入状态
+    messages: [],
+    peoples: []
   },
   canvasIdErrorCallback: function (e) {
     console.error(e.detail.errMsg)
   },
   onReady: function (e) {
     wx.setNavigationBarTitle({ title: '你猜我画' });
-    // if (!this.pageReady) {
-    //     this.pageReady = true;
-    //     this.enter();
-    // }
+    if (!this.pageReady) {
+        this.pageReady = true;
+        this.enter();
+    }
       this.context = wx.createContext()
       this.context.setStrokeStyle("#000000")
       this.context.setLineWidth(2)
@@ -73,6 +75,18 @@ Page({
     onHide() {
         this.quit();
     },
+    set: function () {
+        this.setData({
+            'setShow': true
+        });
+    },
+    hideFix: function () {
+        this.setData({
+            'setShow': false
+        });
+    },
+    stop: function () {
+    },
     /**
      * 启动聊天室
      */
@@ -93,7 +107,38 @@ Page({
             this.connect();
         }
     },
-
+    start: function () {
+        this.tunnel.emit('changestatus', {'status': 1});
+    },
+    addPeople: function (people) {
+        // 判断是否存在
+        var have = false;
+        var len = this.data.peoples.length;
+        for (var i = 0; i < len; i++) {
+            var item = this.data.peoples[i];
+            if (item.openId === people.openId) {
+                have = true;
+            }
+        }
+        if (!have) {
+            this.data.peoples.push(people);
+            this.setData({
+                'peoples': this.data.peoples
+            });
+        }
+    },
+    delPeople: function (people) {
+        var len = this.data.peoples.lenght;
+        for (var i = 0; i < len; i++) {
+            var item = this.data.peoples[i];
+            if (item.openId === people.openId) {
+                delete this.data.peoples[i];
+            }
+        }
+        this.setData({
+            'peoples': this.data.peoples
+        });
+    },
     /**
      * 连接到聊天室信道服务
      */
@@ -102,16 +147,29 @@ Page({
 
         // 创建信道
         var tunnel = this.tunnel = new qcloud.Tunnel(config.service.tunnelUrl);
-
+        
         // 连接成功后，去掉「正在加入群聊」的系统提示
         tunnel.on('connect', () => this.popMessage());
 
         // 聊天室有人加入或退出，反馈到 UI 上
         tunnel.on('people', people => {
             const { total, enter, leave } = people;
+            var connectedTunnelIds = people.people.connectedTunnelIds,
+            len = connectedTunnelIds.length;
+            for (var i = 0; i < len; i++) {
+                var item = connectedTunnelIds[i];
+                var peopleNew = people.people.userMap[item];
+                peopleNew['status'] = 0;
+                this.data.peoples.push(peopleNew);
+            }
+            this.setData({
+                'peoples': this.data.peoples
+            });
             if (enter) {
+                this.addPeople(enter);
                 this.pushMessage(createSystemMessage(`${enter.nickName}已加入群聊，当前共 ${total} 人`));
             } else {
+                this.delPeople(leave);
                 this.pushMessage(createSystemMessage(`${leave.nickName}已退出群聊，当前共 ${total} 人`));
             }
         });
@@ -160,6 +218,26 @@ Page({
                 })
                 this.context.clearActions();
             }
+        });
+        tunnel.on('changestatus', draw => {
+            const { status, who } = draw;
+            // 修改状态
+            var len = this.data.peoples.length;
+            for (var i = 0; i < len; i++) {
+                var item = this.data.peoples[i];
+                if (who.openId === item.openId) {
+                    this.data.peoples[i]['status'] = status;
+                }
+            }
+            this.setData({
+                'peoples': this.data.peoples
+            });
+        });
+        tunnel.on('start', () => {
+            console.log('开始游戏');
+            this.setData({
+                'waiting': false
+            });
         });
 
         // 打开信道
