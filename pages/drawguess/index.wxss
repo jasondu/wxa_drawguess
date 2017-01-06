@@ -8,8 +8,9 @@
     height: 100%;
     flex-direction:column;
     display: flex;
-}
-.text-left {
+}wx-inputwx-inputfoot_label
+.t
+ext-left {
     text-align: left;
 }
 .weui-col {
@@ -192,7 +193,7 @@ text.big_txt {
     width: 100%;
     margin: 0.2rem 0;
     line-height: 1.2;
-    color: #cbcad0;
+    color: #364149;
     font-size: 0.8rem;
 }
 .foot_label {
@@ -204,11 +205,21 @@ text.big_txt {
     box-sizing: border-box;
     background-color: #ccc;
 }
-.foot_label input {
+.foot_label .msg_input {
+    display: inline-block;
     background-color: #fff;
     height: 100%;
     border-radius: 10rem;
-    padding: 0 1rem;
+    padding: 0 10rpx;
+    width: 500rpx;
+}
+.foot_label .send_btn {
+    display: inline-block;
+    width: 170rpx;
+    margin: 0 15rpx;
+    background-color: #f8777b;
+    color: #fff;
+    line-height: 2.1rem;
 }
 .message {
     color: #666666;

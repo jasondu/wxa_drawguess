@@ -37,7 +37,8 @@ Page({
     setShow: false,
     waiting: true,    // 是否是等待人员加入状态
     messages: [],
-    peoples: []
+    peoples: [],
+    inputContent: ''
   },
   canvasIdErrorCallback: function (e) {
     console.error(e.detail.errMsg)
@@ -61,7 +62,13 @@ Page({
             this.enter();
         }
     },
-
+    onShareAppMessage: function () {
+        return {
+        title: '你猜我画',
+        desc: '你猜我画',
+        path: '/pages/drawguess/index'
+        }
+    },
     /**
      * 页面卸载时，退出聊天室
      */
@@ -156,6 +163,7 @@ Page({
             const { total, enter, leave } = people;
             var connectedTunnelIds = people.people.connectedTunnelIds,
             len = connectedTunnelIds.length;
+            this.data.peoples = [];
             for (var i = 0; i < len; i++) {
                 var item = connectedTunnelIds[i];
                 var peopleNew = people.people.userMap[item];
@@ -251,7 +259,32 @@ Page({
             this.tunnel.close();
         }
     },
+    /**
+     * 用户输入的内容改变之后
+     */
+    changeInputContent(e) {
+        this.setData({ inputContent: e.detail.value });
+    },
+    /**
+     * 点击「发送」按钮，通过信道推送消息到服务器
+     **/
+    sendMessage(e) {
+        // 信道当前不可用
+        if (!this.tunnel || !this.tunnel.isActive()) {
+            this.pushMessage(createSystemMessage('您还没有加入群聊，请稍后重试'));
+            if (this.tunnel.isClosed()) {
+                this.enter();
+            }
+            return;
+        }
 
+        setTimeout(() => {
+            if (this.data.inputContent && this.tunnel) {
+                this.tunnel.emit('speak', { word: this.data.inputContent });
+                this.setData({ inputContent: '' });
+            }
+        });
+    },
     /**
      * 通用更新当前消息集合的方法
      */

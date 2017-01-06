@@ -43,6 +43,12 @@
             </view>
             <view class="weui-flex__item">
                 <text bindtap="set">设置</text>
+                <contact-button 
+                type="default-light" 
+                size="20"
+                session-from="weapp"
+                >
+                </contact-button>
                 <!--<icon type="info" color="#fff"/>-->
             </view>
         </view>
@@ -110,7 +116,8 @@
     </scroll-view>
     <!--输入框界面-->
     <view class="foot_label">
-        <input placeholder=""/>
+        <input class="msg_input" placeholder="" value="{{inputContent}}" bindchange="changeInputContent" />
+        <button class="send_btn" hover-class="fix_btn_hover" bindtap="sendMessage" >发送</button>
     </view>
 </view>
 </view>

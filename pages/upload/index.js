@@ -66,6 +66,7 @@ Page({
   },
   upload: function (e) {
     // 上传照片
+    debugger;
     wx.uploadFile({
       url: this.data.uploadUrl, 
       filePath: this.data.imageList[0],
