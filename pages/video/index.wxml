@@ -1,0 +1,4 @@
+<navigator url="./detail/index?id={{item.objectId}}" class="image-label" wx:for="{{video}}" wx:key="{{item.objectId}}">
+    <image src="{{item.thumb.attributes.url}}" mode="aspectFill"></image>
+</navigator>
+<button class="take-btn" bindtap="takeVideo">拍摄</button>

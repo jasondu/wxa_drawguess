@@ -1,0 +1,4 @@
+/* pages/video/create/index.wxss */
+.video-label video {
+    width: 100%;
+}

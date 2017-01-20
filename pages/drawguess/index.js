@@ -175,10 +175,10 @@ Page({
             });
             if (enter) {
                 this.addPeople(enter);
-                this.pushMessage(createSystemMessage(`${enter.nickName}已加入群聊，当前共 ${total} 人`));
+                this.pushMessage(createSystemMessage(`${enter.nickName}已加入房间，当前共 ${total} 人`));
             } else {
                 this.delPeople(leave);
-                this.pushMessage(createSystemMessage(`${leave.nickName}已退出群聊，当前共 ${total} 人`));
+                this.pushMessage(createSystemMessage(`${leave.nickName}已退出房间，当前共 ${total} 人`));
             }
         });
 
@@ -189,7 +189,7 @@ Page({
         });
 
         // 信道关闭后，显示退出群聊
-        tunnel.on('close', () => {
+        tunnel.on('close', people => {
             this.pushMessage(createSystemMessage('您已退出群聊'));
         });
 

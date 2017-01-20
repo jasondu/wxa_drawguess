@@ -1,14 +1,60 @@
 {
     "pages": [
-        "pages/drawguess/index",
         "pages/index/index",
+        "pages/drawguessnew/index",
+
+        "pages/video/index",
+        "pages/video/detail/index",
+        "pages/video/create/index",
+        
+        
+        "pages/demo/index",
+        "pages/weui/index",
+        "pages/qcloud/index",
+        
         "pages/chat/chat",
-        "pages/upload/index"
+        "pages/upload/index",
+        
+        "pages/demo/flex/index",
+        "pages/demo/float/index",
+        
+        "pages/weui/button/button",
+        "pages/weui/list/list",
+        "pages/weui/input/input",
+        "pages/weui/slider/slider",
+        "pages/weui/uploader/uploader",
+
+        "pages/weui/article/article",
+        "pages/weui/badge/badge",
+        "pages/weui/flex/flex",
+        "pages/weui/footer/footer",
+        "pages/weui/gallery/gallery",
+        "pages/weui/grid/grid",
+        "pages/weui/icons/icons",
+        "pages/weui/loadmore/loadmore",
+        "pages/weui/panel/panel",
+        "pages/weui/preview/preview",
+        "pages/weui/progress/progress",
+
+        "pages/weui/actionsheet/actionsheet",
+        "pages/weui/dialog/dialog",
+        "pages/weui/msg/msg",
+        "pages/weui/msg/msg_success",
+        "pages/weui/msg/msg_fail",
+        "pages/weui/picker/picker",
+        "pages/weui/toast/toast",
+
+        "pages/weui/navbar/navbar",
+        "pages/weui/tabbar/tabbar",
+
+        "pages/weui/searchbar/searchbar"
     ],
     "window": {
+        "enablePullDownRefresh": false,
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#f8777b",
-        "navigationBarTitleText": "腾讯云小程序解决方案",
-        "navigationBarTextStyle": "white"
+        "navigationBarTitleText": "微信小程序demo",
+        "navigationBarTextStyle": "white",
+        "backgroundColor": "#f8777b"
     }
 }

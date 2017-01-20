@@ -1,0 +1,37 @@
+
+<!--pages/video/create/index.wxml-->
+<view class="video-label">
+  <video id="myVideo" src="{{url}}" controls="{{true}}"></video>
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">标题</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入标题" value="{{title}}" bindchange="changeInputContent" auto-focus/>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__hd">
+          <view class="weui-uploader__title">封面照片</view>
+        </view>
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <view class="weui-uploader__file" wx:if="{{thumb}}">
+              <image class="weui-uploader__img" src="{{thumb}}" mode="aspectFill" bindtap="chooseImage"/>
+            </view>
+          </view>
+          <view class="weui-uploader__input-box" wx:if="{{!thumb}}">
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitVideo">确定</button>
+</view>

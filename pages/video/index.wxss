@@ -1,0 +1,31 @@
+/* pages/video/index.wxss */
+.image-label {
+    line-height: 0;
+}
+.image-label image {
+    width: 100%;
+}
+.input-label {
+    padding: 10rpx;
+    display: flex;
+}
+.input-label input {
+    flex: 1;
+    background-color: #fff;
+    border: 1rpx solid #ccc;
+    height: 80rpx;
+    border-radius: 10rpx;
+    padding: 0 10rpx;
+}
+.input-label button {
+    width: 200rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border: 1rpx solid #ccc;
+    margin-left: 10rpx;
+}
+.take-btn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

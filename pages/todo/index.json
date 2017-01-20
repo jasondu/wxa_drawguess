@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "待办事项",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "disableScroll": false,
+    "enablePullDownRefresh": true
+}

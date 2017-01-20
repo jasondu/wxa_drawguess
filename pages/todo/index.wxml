@@ -1,0 +1,17 @@
+<!--pages/todo/index.wxml-->
+        <view class="input-label">
+            <input placeholder="输入待办事项" auto-focus bindconfirm="okInput" value="{{value}}"/>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label" wx:for="{{todos}}" wx:key="{{item.objectId}}">
+                    <checkbox class="weui-check" value="{{item.objectId}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+                    </view>
+                    <view class="weui-cell__bd">{{item.title}}</view>
+                </label>
+            </checkbox-group>
+        </view>

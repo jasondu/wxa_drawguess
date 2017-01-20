@@ -204,9 +204,10 @@ text.big_txt {
     padding: 0.2rem 0.4rem;
     box-sizing: border-box;
     background-color: #ccc;
+    display: flex;
 }
 .foot_label .msg_input {
-    display: inline-block;
+    flex: 1;
     background-color: #fff;
     height: 100%;
     border-radius: 10rem;
@@ -214,10 +215,9 @@ text.big_txt {
     width: 500rpx;
 }
 .foot_label .send_btn {
-    display: inline-block;
     width: 170rpx;
     margin: 0 15rpx;
-    background-color: #f8777b;
+    background-color:#f8777b;
     color: #fff;
     line-height: 2.1rem;
 }

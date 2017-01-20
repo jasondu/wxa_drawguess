@@ -1,0 +1,23 @@
+<view class="y-box">
+    <view class="box-item">自适应</view>
+    <view class="box-custom">固定</view>
+    <scroll-view class="box-scroll" scroll-y="true">
+    滚动
+        <view class="test-label"></view>
+    </scroll-view> 
+    <view class="box-footer x-box">
+        <view class="box-item">自适应</view>
+        <view class="box-custom-2">固定</view>
+    </view>
+</view>
+
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">cell standard</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">cell standard</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>

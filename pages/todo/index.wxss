@@ -1,0 +1,6 @@
+/* pages/todo/index.wxss */
+.input-label input {
+    height: 100rpx;
+    padding: 0 30rpx;
+    background-color: #fff;
+}

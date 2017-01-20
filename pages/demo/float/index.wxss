@@ -1,0 +1,21 @@
+.box {
+    border: 1px solid #000;
+}
+.box_1 {
+    background-color: rebeccapurple;
+}
+.box_2 {
+    background-color: blueviolet;
+}
+.float {
+    width: 300rpx;
+    height: 300rpx;
+    float: left;
+}
+.box::after {
+    content:".";        
+    display:block;        
+    height:0;        
+    clear:both;        
+    visibility:hidden;  
+}

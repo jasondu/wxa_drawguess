@@ -1,0 +1,11 @@
+<!--pages/video/index.wxml-->
+<view class="video-label">
+    <video id="myVideo" 
+    src="{{video.video.attributes.url}}"
+    enable-danmu="{{true}}" 
+    controls="{{true}}"></video>
+</view>
+<view class="input-label">
+    <input bindblur="bindInputBlur"/>
+    <button bindtap="bindSendDanmu">发送</button>
+</view>

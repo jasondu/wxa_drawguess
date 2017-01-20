@@ -1,0 +1,4 @@
+<view class="box">
+    <view class="float box_1"></view>
+    <view class="float box_2"></view>
+</view>
